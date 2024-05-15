@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 using System.Windows.Forms;
 namespace FinalProject
 {
@@ -10,7 +11,7 @@ namespace FinalProject
     {
         private static Square[][] squares = new Square[8][];
         private Form currentForm;
-        private Boolean isMoveMade = false;
+        
         public Board(Form f1)
         {
             for (int i = 0; i < squares.Length; i++)
@@ -70,8 +71,14 @@ namespace FinalProject
                 }
             }
         }
-
-        
+        public Boolean isP1Turn()
+        {
+            return squares[0][0].getTurn() % 2 == 1;
+        }
+        public Boolean isWhiteFirst()
+        {
+            return squares[3][3].getHasWhite();
+        } 
         public void disableColor(String color)
         {
             for(int i = 0; i < 8; i++)
@@ -120,13 +127,6 @@ namespace FinalProject
             }
         }
 
-        public Boolean getIsMoveMade()
-        {
-            return isMoveMade;
-        }
-        public void setIsMoveMade(Boolean b)
-        {
-            isMoveMade = b;
-        }
+        
     }
 }

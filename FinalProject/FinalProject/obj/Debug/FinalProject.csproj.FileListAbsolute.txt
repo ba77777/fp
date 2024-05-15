@@ -18,3 +18,13 @@ C:\Users\barak\source\repos\f_n_igor\FinalProject\FinalProject\obj\Debug\FinalPr
 C:\Users\barak\source\repos\f_n_igor\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
 C:\Users\barak\source\repos\f_n_igor\FinalProject\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\barak\source\repos\f_n_igor\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
+C:\Users\barak\source\repos\f_n_igor\fp\FinalProject\FinalProject\bin\Debug\FinalProject.exe.config
+C:\Users\barak\source\repos\f_n_igor\fp\FinalProject\FinalProject\bin\Debug\FinalProject.exe
+C:\Users\barak\source\repos\f_n_igor\fp\FinalProject\FinalProject\bin\Debug\FinalProject.pdb
+C:\Users\barak\source\repos\f_n_igor\fp\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.AssemblyReference.cache
+C:\Users\barak\source\repos\f_n_igor\fp\FinalProject\FinalProject\obj\Debug\FinalProject.Form1.resources
+C:\Users\barak\source\repos\f_n_igor\fp\FinalProject\FinalProject\obj\Debug\FinalProject.Properties.Resources.resources
+C:\Users\barak\source\repos\f_n_igor\fp\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.GenerateResource.cache
+C:\Users\barak\source\repos\f_n_igor\fp\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
+C:\Users\barak\source\repos\f_n_igor\fp\FinalProject\FinalProject\obj\Debug\FinalProject.exe
+C:\Users\barak\source\repos\f_n_igor\fp\FinalProject\FinalProject\obj\Debug\FinalProject.pdb

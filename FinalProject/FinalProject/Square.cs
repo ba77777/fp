@@ -4,13 +4,14 @@ using System.Windows.Forms;
 
 namespace FinalProject
 {
-    class Square : Button
+    class Square :  Button
     {
         private int row;
         private int col;
         private Boolean hasWhite;
         private Boolean hasBlack;
         private Form currentForm;
+        private static int turn= 1;
         //das
 
 
@@ -54,6 +55,10 @@ namespace FinalProject
             hasBlack = b;
         }
 
+        public int getTurn()
+        {
+            return turn;
+        }
         private void drawSquare()
         {
             this.Size = new Size(50, 50);
@@ -100,6 +105,7 @@ namespace FinalProject
                 drawSolider();
                 redrawEatenSoliders();
                 resetBgColors();
+                turn++;
             }
             else if (BackColor == Color.Black)
             {
@@ -107,6 +113,7 @@ namespace FinalProject
                 drawSolider();
                 redrawEatenSoliders();
                 resetBgColors();
+                turn++;
             }
             //MessageBox.Show($"Clicked Square: {row}, {col}, {hasBlack}, {hasWhite}");
 
