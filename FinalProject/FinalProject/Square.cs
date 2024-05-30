@@ -12,7 +12,7 @@ namespace FinalProject
         private Boolean hasBlack;
         private Form currentForm;
         private static int turn= 1;
-        //das
+        
 
 
         public Square(int row, int col, Boolean hasWhite, Boolean hasBlack, Form f1)
@@ -458,7 +458,7 @@ namespace FinalProject
                             square.BackColor = Color.White;
                             break;
                         }
-                        else if (square.getHasBlack())
+                        else if (square.getHasWhite())
                         {
                             break;
                         }

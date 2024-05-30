@@ -16,6 +16,7 @@ namespace FinalProject
         private Form f;
         private System.Timers.Timer timer1 = new System.Timers.Timer();
         private System.Timers.Timer timer2 = new System.Timers.Timer();
+        private int score1 = 0, score2 = 0;
         public Game(Player p1, Player p2, Board b, Form f)
         {
             this.p1 = p1;
@@ -27,10 +28,15 @@ namespace FinalProject
 
         public void playP1()
         {
-            //Boolean = b.checkIfGameOver(p1.getColor());// a function in the Board class
-            //that checks if there r any possible moves to do 
+            //score1 = board.countCol(p1.getColor());            
+            Boolean hasMoves= board.checkIfHasMoves(p1.getColor());
             f.Controls["labelTurn"].Text = p1.getName();
-            if (p1.getColor() == Color.White)
+            if (!hasMoves)
+            {
+                MessageBox.Show("game ended!","End",MessageBoxButtons.OK);
+                
+            }
+            else if (p1.getColor() == Color.White)
             {
                 board.enableColor("white");
                 board.disableColor("black");
@@ -63,10 +69,13 @@ namespace FinalProject
 
         public void playP2()
         {
-            //Boolean = b.checkIfGameOver(p1.getColor());// a function in the Board class
-            //that checks if there r any possible moves to do 
+            Boolean hasMoves = board.checkIfHasMoves(p2.getColor());
             f.Controls["labelTurn"].Text = p2.getName();
-            if (p2.getColor() == Color.White)
+            if (!hasMoves)
+            {
+                MessageBox.Show("game ended!", "End", MessageBoxButtons.OK);
+            }
+            else if (p2.getColor() == Color.White)
             {
                 board.enableColor("white");
                 board.disableColor("black");
@@ -76,7 +85,7 @@ namespace FinalProject
                 board.enableColor("black");
                 board.disableColor("white");
             }
-            //"alert P2 turn in the form"
+            
 
             timer2 = new System.Timers.Timer();
             timer2.Interval = 250; 
