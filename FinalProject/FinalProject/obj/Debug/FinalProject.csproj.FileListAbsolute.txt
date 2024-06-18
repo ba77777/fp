@@ -40,3 +40,5 @@ C:\Users\AMITG\Desktop\שנה ב\פרוייקט סופי\FinalProject\FinalProje
 C:\Users\AMITG\Desktop\שנה ב\פרוייקט סופי\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
 C:\Users\AMITG\Desktop\שנה ב\פרוייקט סופי\FinalProject\FinalProject\obj\Debug\FinalProject.HomeForm.resources
 C:\Users\AMITG\Desktop\שנה ב\פרוייקט סופי\FinalProject\FinalProject\obj\Debug\FinalProject.playersName.resources
+C:\Users\barak\source\repos\f_n_igor\fp\FinalProject\FinalProject\obj\Debug\FinalProject.HomeForm.resources
+C:\Users\barak\source\repos\f_n_igor\fp\FinalProject\FinalProject\obj\Debug\FinalProject.playersName.resources

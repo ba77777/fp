@@ -59,10 +59,13 @@ namespace FinalProject
             if (!board.isP1Turn())
             {
                 timer1.Stop();
-                f.Invoke((MethodInvoker)delegate
+                if (f.IsHandleCreated && !f.IsDisposed)
                 {
-                    playP2();
-                });
+                    f.Invoke((MethodInvoker)delegate
+                    {
+                        playP2();
+                    });
+                }
             }
             
         }
@@ -98,12 +101,15 @@ namespace FinalProject
             if (board.isP1Turn())
             {
                 timer2.Stop();
-                f.Invoke((MethodInvoker)delegate
+                if (f.IsHandleCreated && !f.IsDisposed)
                 {
-                    playP1();
-                });
+                    f.Invoke((MethodInvoker)delegate
+                    {
+                        playP1();
+                    });
+                }
 
-               
+
             }
 
         }

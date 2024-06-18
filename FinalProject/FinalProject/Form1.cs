@@ -40,5 +40,10 @@ namespace FinalProject
 
             Game g = new Game(p1, p2, b, this);
         }
+
+        private void btn_saveBoard(object sender, EventArgs e)
+        {
+
+        }
     }
 }
