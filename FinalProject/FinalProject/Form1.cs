@@ -2,6 +2,10 @@
 using System.Windows.Forms;
 using System.Drawing;
 
+using System.IO;
+using System.Windows.Forms;
+
+
 namespace FinalProject
 {
     public partial class Form1 : Form
@@ -43,7 +47,15 @@ namespace FinalProject
 
         private void btn_saveBoard(object sender, EventArgs e)
         {
+            string name =CountFiles().ToString()+"_"+DateTime.Now.ToString("yyyy-MM-dd_HH:mm");
 
+            MessageBox.Show(name);
+            Close();
+        }
+
+        private int CountFiles()
+        {
+            return Directory.GetFiles(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"SavesFiles")).Length;
         }
     }
 }
