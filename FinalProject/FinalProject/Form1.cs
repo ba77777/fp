@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Drawing;
-
 using System.IO;
-using System.Windows.Forms;
 
 
 namespace FinalProject
@@ -47,15 +45,20 @@ namespace FinalProject
 
         private void btn_saveBoard(object sender, EventArgs e)
         {
-            string name =CountFiles().ToString()+"_"+DateTime.Now.ToString("yyyy-MM-dd_HH:mm");
+            string fileName = (CountFiles() + 1).ToString() + "_" + DateTime.Now.ToString("dd-MM_HH-mm") + ".txt";
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "SavesFiles");
+            string filePath = Path.Combine(path, fileName);
+            string whatToSave = "";
+            File.WriteAllText(filePath, whatToSave);
 
-            MessageBox.Show(name);
-            Close();
+            this.Close();
         }
 
         private int CountFiles()
         {
             return Directory.GetFiles(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"SavesFiles")).Length;
         }
+
+        
     }
 }
