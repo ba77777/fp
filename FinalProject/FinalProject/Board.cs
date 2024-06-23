@@ -29,8 +29,6 @@ namespace FinalProject
             return squares[row][col];
         }
 
-
-
         private void CreateNewBoard()
         {
             Random rnd = new Random();
@@ -156,7 +154,6 @@ namespace FinalProject
             }
             return false;
         }
-
 
         private Boolean hasMoves(Square sqr, Color c)
         {
