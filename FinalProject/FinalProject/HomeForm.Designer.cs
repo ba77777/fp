@@ -38,8 +38,8 @@ namespace FinalProject
             this.vsBot = new System.Windows.Forms.Button();
             this.howToPlay = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBoxHard = new System.Windows.Forms.CheckBox();
+            this.checkBoxEasy = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -91,7 +91,7 @@ namespace FinalProject
             this.vsBot.TabIndex = 0;
             this.vsBot.Text = "vs Bot";
             this.vsBot.UseVisualStyleBackColor = true;
-            this.vsBot.Click += new System.EventHandler(this.playerVplayer_Click);
+            this.vsBot.Click += new System.EventHandler(this.playerVbot_Click);
             // 
             // howToPlay
             // 
@@ -109,33 +109,35 @@ namespace FinalProject
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // checkBox1
+            // checkBoxHard
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(962, 526);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(70, 24);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "Hard\r\n";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxHard.AutoSize = true;
+            this.checkBoxHard.Location = new System.Drawing.Point(962, 526);
+            this.checkBoxHard.Name = "checkBoxHard";
+            this.checkBoxHard.Size = new System.Drawing.Size(70, 24);
+            this.checkBoxHard.TabIndex = 3;
+            this.checkBoxHard.Text = "Hard\r\n";
+            this.checkBoxHard.UseVisualStyleBackColor = true;
+            this.checkBoxHard.Click += new System.EventHandler(this.hardClick);
             // 
-            // checkBox2
+            // checkBoxEasy
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(1132, 526);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(70, 24);
-            this.checkBox2.TabIndex = 3;
-            this.checkBox2.Text = "Easy";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxEasy.AutoSize = true;
+            this.checkBoxEasy.Location = new System.Drawing.Point(1132, 526);
+            this.checkBoxEasy.Name = "checkBoxEasy";
+            this.checkBoxEasy.Size = new System.Drawing.Size(70, 24);
+            this.checkBoxEasy.TabIndex = 3;
+            this.checkBoxEasy.Text = "Easy";
+            this.checkBoxEasy.UseVisualStyleBackColor = true;
+            this.checkBoxEasy.Click += new System.EventHandler(this.easyClick);
             // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1292, 664);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkBoxEasy);
+            this.Controls.Add(this.checkBoxHard);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.vsBot);
@@ -160,7 +162,7 @@ namespace FinalProject
         private System.Windows.Forms.Button vsBot;
         private System.Windows.Forms.Button howToPlay;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBoxHard;
+        private System.Windows.Forms.CheckBox checkBoxEasy;
     }
 }

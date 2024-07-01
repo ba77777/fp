@@ -11,7 +11,7 @@ namespace FinalProject
         private Boolean hasWhite;
         private Boolean hasBlack;
         private Form currentForm;
-        private static int turn= 1;
+        private static int turn = 1;
         
 
 

@@ -9,8 +9,10 @@ namespace FinalProject
 {
     class Bot : Player
     {
-        public Bot(String n, Color col) : base(n,col)
+        private Board board;
+        public Bot(String n, Color col, Board b) : base(n,col)
         {
+            board = b;
         }
     
         

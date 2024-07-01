@@ -12,16 +12,23 @@ namespace FinalProject
 {
     public partial class playersName : Form
     {
-        public playersName()
+        Boolean pvp = true;
+        Boolean esayBot;
+
+        public playersName(Boolean pvp, Boolean esBot)
         {
             InitializeComponent();
+            this.pvp = pvp;
+            esayBot = esBot;
+            if (!pvp)
+            {
+                textName2.Text = "Bot";
+                textName2.ReadOnly = true;
+            }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            string name1 = textName1.Text;
-            string name2 = textName2.Text;
-            Form1 form = new Form1(name1,name2);
+            Form1 form = new Form1(textName1.Text, textName2.Text);
             form.Show();
             this.Close();
         }
