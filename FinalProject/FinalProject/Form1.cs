@@ -6,15 +6,19 @@ namespace FinalProject
 {
     public partial class Form1 : Form
     {
-        private Board b;
+        private Board board;
         private string playerName1;
         private string playerName2;
+        private Boolean pvp;
+        private Boolean easyBot;
 
-        public Form1(string name1, string name2)
+        public Form1(string name1, string name2, Boolean pvp, Boolean esBot)
         {
             InitializeComponent();
-            this.playerName1 = name1;
-            this.playerName2 = name2;
+            playerName1 = name1;
+            playerName2 = name2;
+            this.pvp = pvp;
+            easyBot = esBot;
         }
 
         private void btnX_Click(object sender, EventArgs e)
@@ -24,21 +28,35 @@ namespace FinalProject
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            b = new Board(this);
-            bool isWhiteFirst = b.isWhiteFirst();
+            board = new Board(this);
             Player p1, p2;
-            if (isWhiteFirst)
+            if (pvp)//אם זה שחקן נגד שחקן
             {
-                p1 = new Player(playerName1, Color.White);
-                p2 = new Player(playerName2, Color.Black);
+                bool isWhiteFirst = board.isWhiteFirst();
+                if (isWhiteFirst)
+                {
+                    p1 = new Player(playerName1, Color.White);
+                    p2 = new Player(playerName2, Color.Black);
+                }
+                else
+                {
+                    p1 = new Player(playerName1, Color.Black);
+                    p2 = new Player(playerName2, Color.White);
+                }
             }
-            else
+            else//vs bot
             {
-                p1 = new Player(playerName1, Color.Black);
-                p2 = new Player(playerName2, Color.White);
+                if (easyBot){//if it easy bot
+                    p1= new Player(playerName1, Color.White);
+                    p2= new Bot(playerName2, Color.Black);
+                }
+                else//hard bot
+                {
+                    p1 = new Player(playerName1, Color.White);
+                    p2 = new Player(playerName2, Color.Black);
+                }    
             }
-
-            Game g = new Game(p1, p2, b, this);
+            Game g = new Game(p1, p2, board, this);
         }
 
         private void btn_saveBoard(object sender, EventArgs e)
