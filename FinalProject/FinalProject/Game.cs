@@ -11,6 +11,7 @@ namespace FinalProject
 {
     class Game
     {
+        const int DELAY = 250;
         private Player p1, p2;
         private Board board;
         private Form f;
@@ -28,7 +29,8 @@ namespace FinalProject
 
         public void playP1()
         {
-            //score1 = board.countCol(p1.getColor());            
+            score1 = board.countCol(p1.getColor());
+            score2 = board.countCol(p2.getColor());
             Boolean hasMoves= board.checkIfHasMoves(p1.getColor());
             f.Controls["labelTurn"].Text = p1.getName();
             if (!hasMoves)
@@ -49,7 +51,7 @@ namespace FinalProject
            
 
             timer1 = new System.Timers.Timer();
-            timer1.Interval = 250; 
+            timer1.Interval = DELAY; 
             timer1.Elapsed += Timer1Elapsed;
             timer1.Start();
         }
@@ -72,6 +74,8 @@ namespace FinalProject
 
         public void playP2()
         {
+            score1 = board.countCol(p1.getColor());
+            score2 = board.countCol(p2.getColor());
             Boolean hasMoves = board.checkIfHasMoves(p2.getColor());
             f.Controls["labelTurn"].Text = p2.getName();
             if (!hasMoves)
@@ -91,7 +95,7 @@ namespace FinalProject
             
 
             timer2 = new System.Timers.Timer();
-            timer2.Interval = 250; 
+            timer2.Interval = DELAY; 
             timer2.Elapsed += Timer2Elapsed;
             timer2.Start();
         }
@@ -112,6 +116,14 @@ namespace FinalProject
 
             }
 
+        }
+
+        public String getGameData()
+        {
+            String res = "";
+            res += "P1 name-" + p1.getName() + " " + p1.getColor() + "\n" +
+                "P2 name-" + p2.getName() + " " + p2.getColor() + "\n";
+            return res;
         }
     }
 }

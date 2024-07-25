@@ -32,6 +32,7 @@ namespace FinalProject
             this.btnX = new System.Windows.Forms.Button();
             this.labelTurn = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnX
@@ -79,12 +80,28 @@ namespace FinalProject
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btn_saveBoard);
             // 
+            // btnLoad
+            // 
+            this.btnLoad.BackColor = System.Drawing.Color.Gray;
+            this.btnLoad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.btnLoad.Location = new System.Drawing.Point(172, 36);
+            this.btnLoad.Margin = new System.Windows.Forms.Padding(6);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(90, 92);
+            this.btnLoad.TabIndex = 3;
+            this.btnLoad.Text = "Load";
+            this.btnLoad.UseVisualStyleBackColor = false;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1326, 863);
             this.ControlBox = false;
+            this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelTurn);
             this.Controls.Add(this.btnX);
@@ -102,6 +119,7 @@ namespace FinalProject
         private System.Windows.Forms.Button btnX;
         private System.Windows.Forms.Label labelTurn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLoad;
     }
 }
 

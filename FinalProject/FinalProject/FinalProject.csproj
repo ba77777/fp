@@ -70,6 +70,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveGameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaveGameForm.Designer.cs">
+      <DependentUpon>SaveGameForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Square.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -91,6 +97,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SaveGameForm.resx">
+      <DependentUpon>SaveGameForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

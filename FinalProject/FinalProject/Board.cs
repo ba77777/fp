@@ -9,14 +9,15 @@ namespace FinalProject
 {
     class Board
     {
-        private static Square[][] squares = new Square[8][];
+        const int BOARD_LENGTH = 8;
+        private static Square[][] squares = new Square[BOARD_LENGTH][];
         private Form currentForm;
 
         public Board(Form f1)
         {
-            for (int i = 0; i < squares.Length; i++)
+            for (int i = 0; i < BOARD_LENGTH; i++)
             {
-                squares[i] = new Square[8];
+                squares[i] = new Square[BOARD_LENGTH];
             }
 
             currentForm = f1;
@@ -35,9 +36,9 @@ namespace FinalProject
         {
             Random rnd = new Random();
             int rand = rnd.Next(1, 3);
-            for (int row = 0; row < 8; row++)
+            for (int row = 0; row < BOARD_LENGTH; row++)
             {
-                for (int col = 0; col < 8; col++)
+                for (int col = 0; col < BOARD_LENGTH; col++)
                 {
                     if ((row == 3 && col == 3) || (row == 4 && col == 4))
                     {
@@ -81,9 +82,9 @@ namespace FinalProject
         }
         public void disableColor(String color)
         {
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < BOARD_LENGTH; i++)
             {
-                for (int j = 0; j < 8; j++)
+                for (int j = 0; j < BOARD_LENGTH; j++)
                 {
                     if (color == "black")
                     {
@@ -105,9 +106,9 @@ namespace FinalProject
 
         public void enableColor(String color)
         {
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < BOARD_LENGTH; i++)
             {
-                for (int j = 0; j < 8; j++)
+                for (int j = 0; j < BOARD_LENGTH; j++)
                 {
                     if (color == "black")
                     {
@@ -130,9 +131,9 @@ namespace FinalProject
         public int countCol(Color col)
         {
             int count = 0;
-            for(int row=0; row < 8; row++)
+            for(int row=0; row < BOARD_LENGTH; row++)
             {
-                for (int c = 0; c < 8; c++)
+                for (int c = 0; c < BOARD_LENGTH; c++)
                 {
                     if (col == Color.Black && squares[row][c].getHasBlack())
                         count++;
@@ -146,9 +147,9 @@ namespace FinalProject
         
         public Boolean checkIfHasMoves(Color c)
         {
-            for (int row = 0; row < 8; row++)
+            for (int row = 0; row < BOARD_LENGTH; row++)
             {
-                for (int col = 0; col < 8; col++)
+                for (int col = 0; col < BOARD_LENGTH; col++)
                 {
                     if (hasMoves(squares[row][col], c))
                         return true;
@@ -397,7 +398,7 @@ namespace FinalProject
                 }
                 else if (sqr.getHasWhite() && square.getHasBlack())
                 {
-                    for (int c = col + 2, r = row - 2; c < 8 && r >= 0; c++, r--)
+                    for (int c = col + 2, r = row - 2; c < BOARD_LENGTH && r >= 0; c++, r--)
                     {
                         square =squares[r][c];
                         if (!square.getHasWhite() && !square.getHasBlack())
@@ -495,6 +496,18 @@ namespace FinalProject
             }
             return false;
         }
-        
+     
+        public String getButtonsData()
+        {
+            String res ="isP1Turn: "+ isP1Turn().ToString()+"\n";
+            for(int i = 0; i < BOARD_LENGTH; i++)
+            {
+                for(int j = 0; j < BOARD_LENGTH; j++)
+                {
+                    res += squares[i][j].ToString();
+                }
+            }
+            return res;
+        }
     }
 }
