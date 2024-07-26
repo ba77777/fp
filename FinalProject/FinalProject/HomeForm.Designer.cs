@@ -35,7 +35,6 @@ namespace FinalProject
             this.upload = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.vsBot = new System.Windows.Forms.Button();
             this.howToPlay = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,6 +59,7 @@ namespace FinalProject
             this.upload.TabIndex = 0;
             this.upload.Text = "upload game";
             this.upload.UseVisualStyleBackColor = true;
+            this.upload.Click += new System.EventHandler(this.upload_Click);
             // 
             // pictureBox1
             // 
@@ -80,16 +80,6 @@ namespace FinalProject
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
-            // 
-            // vsBot
-            // 
-            this.vsBot.Location = new System.Drawing.Point(955, 491);
-            this.vsBot.Name = "vsBot";
-            this.vsBot.Size = new System.Drawing.Size(260, 67);
-            this.vsBot.TabIndex = 0;
-            this.vsBot.Text = "vs Bot";
-            this.vsBot.UseVisualStyleBackColor = true;
-            this.vsBot.Click += new System.EventHandler(this.playerVplayer_Click);
             // 
             // howToPlay
             // 
@@ -114,7 +104,6 @@ namespace FinalProject
             this.ClientSize = new System.Drawing.Size(1292, 664);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.vsBot);
             this.Controls.Add(this.playerVplayer);
             this.Controls.Add(this.howToPlay);
             this.Controls.Add(this.upload);
@@ -132,7 +121,6 @@ namespace FinalProject
         private System.Windows.Forms.Button upload;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button vsBot;
         private System.Windows.Forms.Button howToPlay;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }

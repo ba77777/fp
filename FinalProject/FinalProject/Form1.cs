@@ -16,6 +16,18 @@ namespace FinalProject
         private string playerName2;
         private Game g;
         
+        public Form1()
+        {
+            InitializeComponent();
+
+            Timer delayTimer = new Timer();
+            delayTimer.Interval = 1000; // 1000 milliseconds = 1 second
+            delayTimer.Tick +=
+            delayTimer.Start();
+
+            btnLoad_Click(this, EventArgs.Empty);
+        }
+
         public Form1(string name1, string name2)
         {
             InitializeComponent();

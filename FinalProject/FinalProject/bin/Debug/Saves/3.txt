@@ -1,8 +1,8 @@
-Saved: 2024-07-26 19:07:36
-P1 name-a Color [White]
-P2 name-b Color [Black]
+Saved: 2024-07-26 19:21:58
+P1 name-d Color [Black]
+P2 name-s Color [White]
 
-isP1Turn: True
+isP1Turn: False
 square row-0 col-0 hasWhite-False hasBlack-False
 square row-0 col-1 hasWhite-False hasBlack-False
 square row-0 col-2 hasWhite-False hasBlack-False
@@ -22,24 +22,24 @@ square row-1 col-7 hasWhite-False hasBlack-False
 square row-2 col-0 hasWhite-False hasBlack-False
 square row-2 col-1 hasWhite-False hasBlack-False
 square row-2 col-2 hasWhite-False hasBlack-False
-square row-2 col-3 hasWhite-False hasBlack-True
-square row-2 col-4 hasWhite-False hasBlack-True
-square row-2 col-5 hasWhite-False hasBlack-True
+square row-2 col-3 hasWhite-False hasBlack-False
+square row-2 col-4 hasWhite-False hasBlack-False
+square row-2 col-5 hasWhite-False hasBlack-False
 square row-2 col-6 hasWhite-False hasBlack-False
 square row-2 col-7 hasWhite-False hasBlack-False
 square row-3 col-0 hasWhite-False hasBlack-False
 square row-3 col-1 hasWhite-False hasBlack-False
 square row-3 col-2 hasWhite-False hasBlack-False
 square row-3 col-3 hasWhite-False hasBlack-True
-square row-3 col-4 hasWhite-True hasBlack-False
-square row-3 col-5 hasWhite-True hasBlack-False
+square row-3 col-4 hasWhite-False hasBlack-True
+square row-3 col-5 hasWhite-False hasBlack-True
 square row-3 col-6 hasWhite-False hasBlack-False
 square row-3 col-7 hasWhite-False hasBlack-False
 square row-4 col-0 hasWhite-False hasBlack-False
 square row-4 col-1 hasWhite-False hasBlack-False
 square row-4 col-2 hasWhite-False hasBlack-False
-square row-4 col-3 hasWhite-False hasBlack-True
-square row-4 col-4 hasWhite-True hasBlack-False
+square row-4 col-3 hasWhite-True hasBlack-False
+square row-4 col-4 hasWhite-False hasBlack-True
 square row-4 col-5 hasWhite-False hasBlack-False
 square row-4 col-6 hasWhite-False hasBlack-False
 square row-4 col-7 hasWhite-False hasBlack-False

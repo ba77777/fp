@@ -27,5 +27,11 @@ namespace FinalProject
         {
             System.Diagnostics.Process.Start("https://en.wikipedia.org/wiki/Reversi");
         }
+
+        private void upload_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            f.Show();
+        }
     }
 }
