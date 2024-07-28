@@ -21,6 +21,7 @@ namespace FinalProject
         {
             playersName form = new playersName();
             form.Show();
+            this.Hide();
         }
 
         private void howToPlay_Click(object sender, EventArgs e)
@@ -32,6 +33,7 @@ namespace FinalProject
         {
             Form1 f = new Form1();
             f.Show();
+            this.Hide();
         }
     }
 }

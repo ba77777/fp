@@ -15,17 +15,12 @@ namespace FinalProject
         private string playerName1;
         private string playerName2;
         private Game g;
-        
+        private Boolean sentFromDefault = false;
         public Form1()
         {
             InitializeComponent();
-
-            Timer delayTimer = new Timer();
-            delayTimer.Interval = 1000; // 1000 milliseconds = 1 second
-            delayTimer.Tick +=
-            delayTimer.Start();
-
-            btnLoad_Click(this, EventArgs.Empty);
+            sentFromDefault = true;
+            
         }
 
         public Form1(string name1, string name2)
@@ -40,7 +35,7 @@ namespace FinalProject
         {
             Close();
         }
-
+       
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             b = new Board(this);
@@ -57,11 +52,16 @@ namespace FinalProject
                 p2 = new Player(playerName2, Color.White);
             }
 
-            g = new Game(p1, p2, b, this);
+            
+            if(sentFromDefault)
+                btnLoad_Click(this, EventArgs.Empty);
+            else
+                g = new Game(p1, p2, b, this);
         }
 
         private void btn_saveBoard(object sender, EventArgs e)
         {
+           
             SaveGameForm saveForm = new SaveGameForm();
             saveForm.OnSaveSlotSelected += slot =>
             {
@@ -69,7 +69,7 @@ namespace FinalProject
                 saveForm.RefreshButtonTexts();
                 saveForm.Close(); 
             };
-            saveForm.ShowDialog(); 
+            saveForm.ShowDialog(this); 
         }
     
 
@@ -155,5 +155,7 @@ namespace FinalProject
             if (!bool.Parse(isP1first))
                 Square.changeTurn();
         }
+
+        
     }
 }
