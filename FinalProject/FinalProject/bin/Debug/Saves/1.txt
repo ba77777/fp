@@ -1,8 +1,8 @@
-Saved: 2024-07-26 19:07:36
+Saved: 2024-07-28 15:40:58
 P1 name-a Color [White]
 P2 name-b Color [Black]
 
-isP1Turn: True
+isP1Turn: False
 square row-0 col-0 hasWhite-False hasBlack-False
 square row-0 col-1 hasWhite-False hasBlack-False
 square row-0 col-2 hasWhite-False hasBlack-False

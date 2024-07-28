@@ -33,7 +33,9 @@ namespace FinalProject
 
         private void btnX_Click(object sender, EventArgs e)
         {
+            HomeForm f = new HomeForm();
             Close();
+            f.Show();
         }
        
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -156,6 +158,5 @@ namespace FinalProject
                 Square.changeTurn();
         }
 
-        
     }
 }

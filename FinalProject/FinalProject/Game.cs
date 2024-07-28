@@ -33,6 +33,7 @@ namespace FinalProject
             score2 = board.countCol(p2.getColor());
             Boolean hasMoves= board.checkIfHasMoves(p1.getColor());
             f.Controls["labelTurn"].Text = p1.getName();
+            f.Controls["score_label"].Text = "score:\n" + score1.ToString();
             if (!hasMoves)
             {
                 MessageBox.Show("game ended!","End",MessageBoxButtons.OK);
@@ -78,6 +79,8 @@ namespace FinalProject
             score2 = board.countCol(p2.getColor());
             Boolean hasMoves = board.checkIfHasMoves(p2.getColor());
             f.Controls["labelTurn"].Text = p2.getName();
+            f.Controls["score_label"].Text = "score:\n" + score2.ToString();
+
             if (!hasMoves)
             {
                 MessageBox.Show("game ended!", "End", MessageBoxButtons.OK);

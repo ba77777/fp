@@ -33,6 +33,7 @@ namespace FinalProject
             this.labelTurn = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
+            this.score_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnX
@@ -58,7 +59,7 @@ namespace FinalProject
             this.labelTurn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelTurn.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTurn.ForeColor = System.Drawing.Color.Black;
-            this.labelTurn.Location = new System.Drawing.Point(150, 200);
+            this.labelTurn.Location = new System.Drawing.Point(60, 87);
             this.labelTurn.Name = "labelTurn";
             this.labelTurn.Size = new System.Drawing.Size(150, 150);
             this.labelTurn.TabIndex = 1;
@@ -71,7 +72,7 @@ namespace FinalProject
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.button1.Location = new System.Drawing.Point(172, 437);
+            this.button1.Location = new System.Drawing.Point(15, 589);
             this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 92);
@@ -86,7 +87,7 @@ namespace FinalProject
             this.btnLoad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.btnLoad.Location = new System.Drawing.Point(172, 36);
+            this.btnLoad.Location = new System.Drawing.Point(156, 589);
             this.btnLoad.Margin = new System.Windows.Forms.Padding(6);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(90, 92);
@@ -94,6 +95,21 @@ namespace FinalProject
             this.btnLoad.Text = "Load";
             this.btnLoad.UseVisualStyleBackColor = false;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // score_label
+            // 
+            this.score_label.AutoEllipsis = true;
+            this.score_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.score_label.Cursor = System.Windows.Forms.Cursors.Default;
+            this.score_label.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.score_label.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.score_label.ForeColor = System.Drawing.Color.Black;
+            this.score_label.Location = new System.Drawing.Point(60, 265);
+            this.score_label.Name = "score_label";
+            this.score_label.Size = new System.Drawing.Size(150, 150);
+            this.score_label.TabIndex = 1;
+            this.score_label.Text = "score:";
+            this.score_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -103,6 +119,7 @@ namespace FinalProject
             this.ControlBox = false;
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.score_label);
             this.Controls.Add(this.labelTurn);
             this.Controls.Add(this.btnX);
             this.Name = "Form1";
@@ -120,6 +137,7 @@ namespace FinalProject
         private System.Windows.Forms.Label labelTurn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.Label score_label;
     }
 }
 
