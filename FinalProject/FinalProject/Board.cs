@@ -13,6 +13,7 @@ namespace FinalProject
         private static Square[][] squares = new Square[BOARD_LENGTH][];
         private Form currentForm;
 
+        public List<Square> possibleMoves { get; } = new List<Square>();
         public Board(Form f1)
         {
             for (int i = 0; i < BOARD_LENGTH; i++)
@@ -143,15 +144,22 @@ namespace FinalProject
             }
             return count;
         }
+
+
         private Boolean checkVal(int n){ return n >= 0 && n < 8; }
-        
+
         public Boolean checkIfHasMoves(Color c)
         {
+            possibleMoves.Clear();
             for (int row = 0; row < BOARD_LENGTH; row++)
             {
                 for (int col = 0; col < BOARD_LENGTH; col++)
                 {
                     if (hasMoves(squares[row][col], c))
+                    {
+                        possibleMoves.Add(squares[row][col]); 
+                    }
+                    if (possibleMoves.Count > 0)
                         return true;
                 }
             }
@@ -180,6 +188,7 @@ namespace FinalProject
                         square = squares[r][col];
                         if (!square.getHasWhite() && !square.getHasBlack())
                         {
+
                             return true;
                         }
                         else if (square.getHasBlack())

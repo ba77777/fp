@@ -126,7 +126,10 @@ namespace FinalProject
             //MessageBox.Show($"Clicked Square: {row}, {col}, {hasBlack}, {hasWhite}");
 
         }
-
+        public static void clickButton(Square sqr)
+        {
+            sqr.buttons_MouseClick(sqr, null);
+        }
         private Boolean checkVal(int val)
         {
             return val >= 0 && val < BOARD_LEN;

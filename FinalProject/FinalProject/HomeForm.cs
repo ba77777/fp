@@ -19,7 +19,7 @@ namespace FinalProject
 
         private void playerVplayer_Click(object sender, EventArgs e)
         {
-            playersName form = new playersName();
+            playersName form = new playersName(false);
             form.Show();
             this.Hide();
         }
@@ -33,6 +33,13 @@ namespace FinalProject
         {
             Form1 f = new Form1();
             f.Show();
+            this.Hide();
+        }
+
+        private void btnBot_Click(object sender, EventArgs e)
+        {
+            playersName form = new playersName(true);
+            form.Show();
             this.Hide();
         }
     }

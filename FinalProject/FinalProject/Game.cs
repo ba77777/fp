@@ -34,7 +34,7 @@ namespace FinalProject
             Boolean hasMoves= board.checkIfHasMoves(p1.getColor());
             f.Controls["labelTurn"].Text = p1.getName();
             f.Controls["score_label"].Text = "score:\n" + score1.ToString();
-            if (!hasMoves)
+            if (score1 == 0 || !hasMoves)
             {
                 MessageBox.Show("game ended!","End",MessageBoxButtons.OK);
                 
@@ -81,7 +81,7 @@ namespace FinalProject
             f.Controls["labelTurn"].Text = p2.getName();
             f.Controls["score_label"].Text = "score:\n" + score2.ToString();
 
-            if (!hasMoves)
+            if (score2 == 0 || !hasMoves)
             {
                 MessageBox.Show("game ended!", "End", MessageBoxButtons.OK);
             }
@@ -96,18 +96,27 @@ namespace FinalProject
                 board.disableColor("white");
             }
             
-
-            timer2 = new System.Timers.Timer();
-            timer2.Interval = DELAY; 
-            timer2.Elapsed += Timer2Elapsed;
-            timer2.Start();
+            if(p2 is Cpu)
+            {
+                Cpu cpuInstance = p2 as Cpu;
+                cpuInstance.playCpu(f,board);
+                playP1();
+            }
+            else
+            {
+                timer2 = new System.Timers.Timer();
+                timer2.Interval = DELAY;
+                timer2.Elapsed += Timer2Elapsed;
+                timer2.Start();
+            }
         }
 
         private void Timer2Elapsed(object sender, ElapsedEventArgs e)
         {
             if (board.isP1Turn())
             {
-                timer2.Stop();
+                if(!(p2 is Cpu))
+                    timer2.Stop();
                 if (f.IsHandleCreated && !f.IsDisposed)
                 {
                     f.Invoke((MethodInvoker)delegate

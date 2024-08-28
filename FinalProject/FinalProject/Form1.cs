@@ -45,13 +45,23 @@ namespace FinalProject
             Player p1, p2;
             if (isWhiteFirst)
             {
+                string tempName = playerName2.Substring(0, 3);
+                char diff = playerName2[playerName2.Length - 1];
                 p1 = new Player(playerName1, Color.White);
-                p2 = new Player(playerName2, Color.Black);
+                if (tempName == "CPU")
+                    p2 = new Cpu(tempName, Color.Black, diff.ToString());
+                else
+                    p2 = new Player(playerName2, Color.Black);
             }
             else
             {
+                string tempName = playerName2.Substring(0, 3);
+                char diff = playerName2[playerName2.Length - 1];
                 p1 = new Player(playerName1, Color.Black);
-                p2 = new Player(playerName2, Color.White);
+                if (tempName == "CPU")
+                    p2 = new Cpu(tempName, Color.White, diff.ToString());
+                else
+                    p2 = new Player(playerName2, Color.White);
             }
 
             
