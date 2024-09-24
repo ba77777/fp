@@ -23,11 +23,14 @@ namespace FinalProject
                 this.Controls["textName2"].Hide();
                 comboBox = new ComboBox();
                 comboBox.Location = this.Controls["textName2"].Location; 
-                comboBox.Size = new System.Drawing.Size(150, 30);
+                comboBox.Size = this.Controls["textName2"].Size;
                 comboBox.Items.Add("Begginer");
-                comboBox.Items.Add("Medium");
                 comboBox.Items.Add("Hard");
                 comboBox.SelectedIndex = 0;
+                comboBox.BackColor = Color.FromArgb(52, 152, 219);
+                comboBox.FlatStyle = FlatStyle.Flat;
+                comboBox.Font = new Font("Serif", 16, FontStyle.Bold);
+                comboBox.ForeColor = Color.White;
                 this.Controls.Add(comboBox);
                 
             }
@@ -44,14 +47,24 @@ namespace FinalProject
                 name2 = "CPU";
                 if (comboBox.SelectedItem.ToString() == "Begginer")
                     name2 += "B";
-                else if (comboBox.SelectedItem.ToString() == "Medium")
-                    name2 += "M";
                 else
                     name2 += "H";
             }
             Form1 form = new Form1(name1,name2);
             form.Show();
             this.Close();
+        }
+
+        private void btnX_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to quit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+            HomeForm f = new HomeForm();
+            Close();
+            f.Show();
         }
     }
 }

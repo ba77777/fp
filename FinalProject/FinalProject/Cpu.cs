@@ -21,14 +21,12 @@ namespace FinalProject
         {
             return difficulty;
         }
-        public void playCpu(Form f, Board board)
+        public void playCpu(Board board)
         {
             if (difficulty == "B")
-                Beginner(f, board);
-            else if (difficulty == "M")
-                Medium(f, board);
+                Beginner(board);
             else
-                Hard(f, board);
+                Hard(board);
         }
         private List<Square> possible_moves(Board board)
         {
@@ -140,7 +138,7 @@ namespace FinalProject
             }
             return Math.Abs(move_col - best_col - 1);
         }
-        private void Beginner(Form f, Board board)
+        private void Beginner(Board board)
         {
             List<Square> occupiedSquares = board.OccupiedSquares, possibleMoves = null;
             int numOf = occupiedSquares.Count();
@@ -153,19 +151,13 @@ namespace FinalProject
             Square.clickButton(possibleMoves[rand]);
         }
 
-
-        private void Medium(Form f, Board board)
+        private void Hard(Board board)
         {
             Square bestSquareToMove = ChooseBestSquareToMove(board);
             Square.clickButton(bestSquareToMove);
             List<Square> possibleMoves = possible_moves(board);
             Square bestDestination = ChooseBestDestination(board, possibleMoves, bestSquareToMove);
             Square.clickButton(bestDestination);
-        }
-
-        private void Hard(Form f, Board board)
-        {
-
         }
     }
 }

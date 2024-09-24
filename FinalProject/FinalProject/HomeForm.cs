@@ -42,5 +42,15 @@ namespace FinalProject
             form.Show();
             this.Hide();
         }
+
+        private void btnX_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to quit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+            Application.Exit();
+        }
     }
 }

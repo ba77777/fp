@@ -1,6 +1,6 @@
-Saved: 2024-07-03 04:46:07
-P1 name-a Color [Black] score-2
-P2 name-b Color [White] score-2
+Saved: 2024-09-24 17:37:25
+P1 name-a Color [Black]
+P2 name-b Color [White]
 
 isP1Turn: True
 square row-0 col-0 hasWhite-False hasBlack-False
@@ -45,8 +45,8 @@ square row-4 col-6 hasWhite-False hasBlack-False
 square row-4 col-7 hasWhite-False hasBlack-False
 square row-5 col-0 hasWhite-False hasBlack-False
 square row-5 col-1 hasWhite-False hasBlack-False
-square row-5 col-2 hasWhite-False hasBlack-False
-square row-5 col-3 hasWhite-False hasBlack-False
+square row-5 col-2 hasWhite-True hasBlack-False
+square row-5 col-3 hasWhite-False hasBlack-True
 square row-5 col-4 hasWhite-False hasBlack-False
 square row-5 col-5 hasWhite-False hasBlack-False
 square row-5 col-6 hasWhite-False hasBlack-False

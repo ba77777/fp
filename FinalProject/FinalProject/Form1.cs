@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Drawing;
-
 using System.IO;
-using System.Windows.Forms;
 
 
 namespace FinalProject
@@ -33,6 +31,11 @@ namespace FinalProject
 
         private void btnX_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Are you sure you want to quit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
             HomeForm f = new HomeForm();
             Close();
             f.Show();

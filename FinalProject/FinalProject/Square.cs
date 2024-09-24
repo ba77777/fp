@@ -8,7 +8,7 @@ namespace FinalProject
     {
         const int BOARD_LEN = 8;
         const int SQUARE_SIZE = 50;
-        const int SQUARE_PADDING = 250;
+        const int SQUARE_PADDING = 205;
         const int SQUARE_GREEN_HUE = 175;
         private int row;
         private int col;
@@ -70,7 +70,7 @@ namespace FinalProject
         private void drawSquare()
         {
             this.Size = new Size(SQUARE_SIZE, SQUARE_SIZE);
-            this.Location = new Point(SQUARE_PADDING + SQUARE_SIZE * col, SQUARE_SIZE + SQUARE_SIZE * row);
+            this.Location = new Point(SQUARE_PADDING + SQUARE_SIZE * col, SQUARE_SIZE/2 + SQUARE_SIZE * row);
             this.BackColor = Color.FromArgb(0, SQUARE_GREEN_HUE, 0);
             this.FlatStyle = FlatStyle.Flat;
             this.Enabled = true;
