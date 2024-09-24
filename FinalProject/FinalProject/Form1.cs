@@ -45,8 +45,14 @@ namespace FinalProject
             Player p1, p2;
             if (isWhiteFirst)
             {
-                string tempName = playerName2.Substring(0, 3);
-                char diff = playerName2[playerName2.Length - 1];
+
+                string tempName = null;
+                char diff = '0';
+                if(playerName2 != null)
+                {
+                    tempName = playerName2.Substring(0, 3);
+                    diff = playerName2[playerName2.Length - 1];
+                }
                 p1 = new Player(playerName1, Color.White);
                 if (tempName == "CPU")
                     p2 = new Cpu(tempName, Color.Black, diff.ToString());
@@ -55,8 +61,14 @@ namespace FinalProject
             }
             else
             {
-                string tempName = playerName2.Substring(0, 3);
-                char diff = playerName2[playerName2.Length - 1];
+
+                string tempName = null;
+                char diff = '0';
+                if (playerName2 != null)
+                {
+                    tempName = playerName2.Substring(0, 3);
+                    diff = playerName2[playerName2.Length - 1];
+                }
                 p1 = new Player(playerName1, Color.Black);
                 if (tempName == "CPU")
                     p2 = new Cpu(tempName, Color.White, diff.ToString());
@@ -162,7 +174,14 @@ namespace FinalProject
             p2Col = p2Col.Substring(1, p2Col.Length - 2);
             
             Player P1 = new Player(p1Name, Color.FromName(p1Col));
-            Player P2 = new Player(p2Name, Color.FromName(p2Col));
+            Player P2;
+            if (p2Name == "CPU")
+            {
+                String p2Diff = (p2.Split(' ')[4]);
+                P2 = new Cpu(p2Name, Color.FromName(p2Col), p2Diff);
+            }
+            else    
+                P2 = new Player(p2Name, Color.FromName(p2Col));
             g = new Game(P1, P2, b, this);
             if (!bool.Parse(isP1first))
                 Square.changeTurn();

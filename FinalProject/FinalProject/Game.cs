@@ -133,8 +133,16 @@ namespace FinalProject
         public String getGameData()
         {
             String res = "";
-            res += "P1 name-" + p1.getName() + " " + p1.getColor() + "\n" +
-                "P2 name-" + p2.getName() + " " + p2.getColor() + "\n";
+            res += "P1 name-" + p1.getName() + " " + p1.getColor() + "\n";
+            if(p2 is Cpu)
+            {
+                Cpu cpuInstance = p2 as Cpu;
+                res += "P2 name-" + p2.getName() + " " + p2.getColor() + " " + cpuInstance.getDiff() + "\n";
+            }
+            else
+            {
+                res += "P2 name-" + p2.getName() + " " + p2.getColor() + "\n";
+            }
             return res;
         }
     }
