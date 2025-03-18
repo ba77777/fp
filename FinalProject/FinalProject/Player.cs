@@ -9,8 +9,8 @@ namespace FinalProject
 {
     class Player
     {
-        private String name = "";
-        private Color col;
+        protected String name = "";
+        protected Color col;
         public Player(String n,Color col)
         {
             name = n;

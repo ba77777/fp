@@ -6,6 +6,10 @@ namespace FinalProject
 {
     class Square :  Button
     {
+        const int BOARD_LEN = 8;
+        const int SQUARE_SIZE = 50;
+        const int SQUARE_PADDING = 205;
+        const int SQUARE_GREEN_HUE = 175;
         private int row;
         private int col;
         private Boolean hasWhite;
@@ -59,11 +63,15 @@ namespace FinalProject
         {
             return turn;
         }
+        public static void changeTurn()
+        {
+            turn++;
+        }
         private void drawSquare()
         {
-            this.Size = new Size(50, 50);
-            this.Location = new Point(250 + 50 * col, 50 + 50 * row);
-            this.BackColor = Color.FromArgb(0, 175, 0);
+            this.Size = new Size(SQUARE_SIZE, SQUARE_SIZE);
+            this.Location = new Point(SQUARE_PADDING + SQUARE_SIZE * col, SQUARE_SIZE/2 + SQUARE_SIZE * row);
+            this.BackColor = Color.FromArgb(0, SQUARE_GREEN_HUE, 0);
             this.FlatStyle = FlatStyle.Flat;
             this.Enabled = true;
             this.MouseClick += new MouseEventHandler(buttons_MouseClick);
@@ -118,19 +126,22 @@ namespace FinalProject
             //MessageBox.Show($"Clicked Square: {row}, {col}, {hasBlack}, {hasWhite}");
 
         }
-
+        public static void clickButton(Square sqr)
+        {
+            sqr.buttons_MouseClick(sqr, null);
+        }
         private Boolean checkVal(int val)
         {
-            return val >= 0 && val < 8;
+            return val >= 0 && val < BOARD_LEN;
         }
-        private void resetBgColors()
+        public void resetBgColors()
         {
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < BOARD_LEN; i++)
             {
-                for (int j = 0; j < 8; j++)
+                for (int j = 0; j < BOARD_LEN; j++)
                 {
                     Square square = Board.GetSquare(i, j);
-                    square.BackColor = Color.FromArgb(0, 175, 0);
+                    square.BackColor = Color.FromArgb(0, SQUARE_GREEN_HUE, 0);
                 }
             }
         }
@@ -370,7 +381,7 @@ namespace FinalProject
                 }
                 else if (this.hasWhite && square.getHasBlack())
                 {
-                    for (int c = col + 2, r = row - 2; c < 8 && r >= 0; c++, r--)
+                    for (int c = col + 2, r = row - 2; c < BOARD_LEN && r >= 0; c++, r--)
                     {
                         square = Board.GetSquare(r, c);
                         if (!square.getHasWhite() && !square.getHasBlack())
@@ -918,6 +929,16 @@ namespace FinalProject
                     }
                 }
             }
+        }
+
+
+        public override string ToString()
+        {
+            String res = "";
+            res += "square row-" + row + " col-" + col+
+                " hasWhite-"+hasWhite.ToString()+ " hasBlack-"+hasBlack.ToString()+"\n";
+
+            return res;
         }
     }
 }
